@@ -3,22 +3,15 @@
 @tailwind utilities;
 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   width: 100%;
-  color: var(--foreground);
+  color: #ededed;
   height: 100%;
-  background: var(--background);
-  font-family: Playpen Sans, cursive;
+  background: #0a0a0a;
+  /* font-family: Dancing Script, cursive; */
 }
 
 /* 3D rotate y-axis */
-.font-signature {
+/* .font-signature {
   font-family: Dancing Script, cursive;
-}
+} */

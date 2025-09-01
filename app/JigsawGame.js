@@ -167,14 +167,14 @@ function useCountdown(seconds, isRunning, onComplete) {
 
 function Option({ label, chosen, correct, disabled, onClick, reveal }) {
   const base =
-    "w-full text-left p-4 rounded-2xl border transition active:scale-[0.99] focus:outline-none focus:ring-2";
+    "w-full text-left p-4 rounded-2xl border text-black z-[999] transition active:scale-[0.99] focus:outline-none focus:ring-2";
   const state = !reveal
-    ? "border-gray-200 hover:border-indigo-400"
+    ? "border-gray-500 hover:border-indigo-400"
     : correct
     ? "border-green-500 bg-green-50"
     : chosen
     ? "border-red-500 bg-red-50"
-    : "border-gray-200 opacity-70";
+    : "border-gray-500 opacity-70";
   return (
     <button
       className={`${base} ${state}`}
@@ -328,12 +328,12 @@ export default function SentientQuizApp() {
           <div className="">
             <img
               src={logo.src}
-              className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+              className="h-10 w-16 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
               alt="logo"
             />
           </div>
           <div>
-            <h1 className="text-3xl md:text-3xl font-bold">
+            <h1 className="text-3xl md:text-3xl font-bold text-gray-500">
               Sentient – Multiple Choice Quiz
             </h1>
             <p className="text-sm text-gray-600">
@@ -385,7 +385,7 @@ export default function SentientQuizApp() {
             </div>
 
             <div className="space-y-4">
-              <h2 className="text-lg md:text-xl font-semibold">
+              <h2 className="text-lg md:text-xl font-semibold text-gray-500 font-bold">
                 {current?.q ?? "(No question)"}
               </h2>
 
@@ -414,7 +414,7 @@ export default function SentientQuizApp() {
               <div className="flex flex-wrap gap-2 justify-between pt-2">
                 <div className="flex gap-2">
                   <button
-                    className="px-4 py-2 rounded-xl border hover:bg-gray-50"
+                    className="px-4 py-2 rounded-xl border hover:bg-gray-50 text-gray-500 border-gray-500"
                     onClick={prev}
                     disabled={idx === 0}
                   >
@@ -440,7 +440,7 @@ export default function SentientQuizApp() {
                 </div>
                 <div className="flex gap-2">
                   <button
-                    className="px-4 py-2 rounded-xl border hover:bg-gray-50"
+                    className="px-4 py-2 rounded-xl border hover:bg-gray-50 text-gray-500 border-gray-500"
                     onClick={reset}
                   >
                     Reset quiz
